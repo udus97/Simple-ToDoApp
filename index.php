@@ -14,21 +14,22 @@
   <div class="list">
     <h1 class="header">To Do</h1>
 
-    <ul>
+    <ul class="items">
       <li>
         <span class="item done">Code</span>
       </li>
       <li>
-        <span class="item">Sleep</span>
+        <span class="item">Sleep</span> <a href="#" class="done-button">Mark as done</a>
       </li>
       <li>
-        <span class="item">Go to EKSUTH</span>
+        <span class="item">Go to EKSUTH</span> <a href="#" class="done-button">Mark as done</a>
+
       </li>
 
     </ul>
     <form action="add.php" method="POST" class="item-add">
       <input type="text" name="name" placeholder="Type a new item here" class="input" autocomplete="off" required>
-      <input type="submit" value="Add">Add</input>
+      <input type="submit" value="Add">
     </form>
 
 
