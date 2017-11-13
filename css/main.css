@@ -49,10 +49,14 @@ h1.header {
 }
 
 
-li .item,.item-add input[type=text] {
+li .item,.item-add input[type=text]{
   border:0;
-  border-bottom: 1px dashed #ccc;
   padding: 15px 0
+}
+
+.item-add input[type=text]{
+  border-bottom: 1px dashed #ccc;
+
 }
 
 .item-add input[type=text]:focus{
