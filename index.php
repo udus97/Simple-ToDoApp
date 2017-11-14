@@ -67,8 +67,8 @@ START;
       }
     ?>
     <form action="add.php" method="POST" class="item-add">
-      <input type="text" name="name" placeholder="Type a new item here" class="input" autocomplete="off" required>
-      <input type="submit" value="Add">
+      <input type="text" name="task" placeholder="Type a new item here" class="input" autocomplete="off" required>
+      <input name = "submit" type="submit" value="Add">
     </form>
 
 
