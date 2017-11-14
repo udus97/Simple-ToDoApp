@@ -69,8 +69,9 @@ START;
       }
     ?>
     <form action="add.php" method="POST" class="item-add">
-      <input type="text" name="task" placeholder="Type a new item here" class="input" autocomplete="off" required>
+      <input type="text" name="task" placeholder="Type a new item here" class="input" autocomplete="off" autofocus>
       <input name = "submit" type="submit" value="Add">
+      <input type="submit" name = "empty" value="Empty List">
     </form>
 
 
