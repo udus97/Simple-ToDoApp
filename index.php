@@ -39,8 +39,10 @@ $items = count($rows) ? $rows : [];
     <ul class="items">
     <?php
       foreach ($items as $item ) {
+        $itemID = $item['id'];
         $done = $item['done'] ? 'done':'';
-        $doneButton = $done ? '':'<a href = "#" class = "done-button">Mark as done</a>';
+        // $doneButton = $done ? '':"<a href = \"mark.php?as=done&id=$itemID\" class = \"done-button\">Mark as done</a>";
+        $doneButton = $done ? "<a href = \"mark.php?as=undone&id=$itemID\" class = \"done-button\">Mark as undone</a>":"<a href = \"mark.php?as=done&id=$itemID\" class = \"done-button\">Mark as done</a>";
         $task = $item['task'];
         $heredoc = <<<START
         <li><span class = "item $done">$task</span>$doneButton</li>
