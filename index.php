@@ -11,13 +11,7 @@ $rows = [];
 while($row = $result->fetchArray(SQLITE3_ASSOC)){
   $rows[] = $row;
 }
-// new dBug($rows);
 $items = count($rows) ? $rows : [];
-
-// echo '<pre>',print_r($items),'</pre>';
-// foreach ($items as $item ) {
-//   echo $item['task'],"<br>";
-// }
 
 ?>
 <!DOCTYPE html>
@@ -41,26 +35,14 @@ $items = count($rows) ? $rows : [];
       foreach ($items as $item ) {
         $itemID = $item['id'];
         $done = $item['done'] ? 'done':'';
-        // $doneButton = $done ? '':"<a href = \"mark.php?as=done&id=$itemID\" class = \"done-button\">Mark as done</a>";
         $doneButton = $done ? "<a href = \"mark.php?as=undone&id=$itemID\" class = \"done-button\">Mark as undone</a>":"<a href = \"mark.php?as=done&id=$itemID\" class = \"done-button\">Mark as done</a>";
         $task = $item['task'];
         $heredoc = <<<START
         <li><span class = "item $done">$task</span>$doneButton</li>
 START;
-        // echo("<li><span class=","</li>");
         echo $heredoc;
       }
     ?>
-      <!--<li>
-        <span class="item done">Code</span>
-      </li>
-      <li>
-        <span class="item">Sleep</span> <a href="#" class="done-button">Mark as done</a>
-      </li>
-      <li>
-        <span class="item">Go to EKSUTH</span> <a href="#" class="done-button">Mark as done</a>
-
-      </li>-->
 
     </ul>
     <?php }
@@ -73,9 +55,6 @@ START;
       <input name = "submit" type="submit" value="Add">
       <input type="submit" name = "empty" value="Empty List">
     </form>
-
-
   </div>
 </body>
-
 </html>
