@@ -49,6 +49,10 @@ h1.header {
   margin-left: 10px;
 }
 
+li{
+  margin-bottom:5px;
+}
+
 
 li .item,.item-add input[type=text]{
   border:0;
