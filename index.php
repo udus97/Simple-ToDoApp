@@ -3,7 +3,7 @@ require_once "./app/init.php";
 require_once "../local_CDN/dBug.php";
 
 $user = $_SESSION['user_id'];
-$itemsQuery = "SELECT id,task,done FROM items WHERE username = $user";
+$itemsQuery = "SELECT id,task,done,created FROM items WHERE username = $user";
 
 $result = $db->query($itemsQuery);
 $rows = [];
@@ -33,12 +33,14 @@ $items = count($rows) ? $rows : [];
     <ul class="items">
     <?php
       foreach ($items as $item ) {
+        $created = ago($item['created']);
         $itemID = $item['id'];
         $done = $item['done'] ? 'done':'';
         $doneButton = $done ? "<a href = \"mark.php?as=undone&id=$itemID\" class = \"done-button\">Mark as undone</a>":"<a href = \"mark.php?as=done&id=$itemID\" class = \"done-button\">Mark as done</a>";
         $task = $item['task'];
+        $time = "<span>$created</span>";
         $heredoc = <<<START
-        <li><span class = "item $done">$task</span>$doneButton</li>
+        <li><span class = "item $done">$task</span>$doneButton $time</li>
 START;
         echo $heredoc;
       }
